@@ -189,11 +189,9 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
   right: 0;
-  top: 80px;
-  width: 50%;
+  top: 145px;
+
 }
 .inside #map {
   background-color: #ccc;
@@ -203,7 +201,6 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
 }
 #restaurant-name {
   color: #f18200;
@@ -238,7 +235,7 @@ nav h1 a {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+
 }
 #reviews-container {
   padding: 30px 40px 80px;
@@ -271,14 +268,16 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
-/* ====================== Mobile Device Viewing ====================== */
+/* ====================== Mobile Device Viewing for the Front Page ====================== */
 .filterSub{
 	text-align: center;
 	font-size: 150%;
 	padding-top: 20px;
 }
 .restReviews{
-	font-size: 150%;
+	position: relative;
+	position: relative;
+	top: 25px;
 }
 .cuisine{
 	float: right;
@@ -293,7 +292,7 @@ nav h1 a {
 }
 .restaurant-img{
 	padding: 10px;
-	right: 5px;
+	right: 9px;
 	position: relative;
 }
 .cuisine{
@@ -305,4 +304,30 @@ nav h1 a {
 	float: left;
 	top :5px;
 	position: relative;
+}
+/*=======================Mobile Device Viewing for the Info Section============================*/
+@media screen and (max-width: 500px) {
+	#map-container{
+		width: 100%;
+		position: relative;
+		display: block;
+		height: 400px;
+		z-index: 0;
+
+	}
+
+	#restaurant-container, #reviews-container {
+		width: 100%;
+		position: relative;
+		right: 5%;
+	}
+	#breadcrumb {
+		width: 100%;
+	}
+
+	#restaurant-name{
+		left: 6%;
+		position: relative;
+	}
+
 }

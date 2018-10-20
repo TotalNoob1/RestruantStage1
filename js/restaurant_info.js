@@ -172,8 +172,10 @@ createReviewHTML = (review) => {
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
+
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.classList.add('breadcrumbHtml');
   breadcrumb.appendChild(li);
 }
 
@@ -192,3 +194,17 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+document.getElementsByTagName('nav')[0].children[0].classList.add('restReviews');
+
+var metaTag = document.createElement('meta');
+var viewport = document.createAttribute("name");
+var contentattr = document.createAttribute("content");
+
+viewport.value = 'viewport';
+contentattr.value = 'width=device-width, initial-scale=1';
+metaTag.setAttributeNode(viewport);
+metaTag.setAttributeNode(contentattr);
+document.getElementsByTagName('head')[0].appendChild(metaTag);
+
+document.getElementById('map').classList.add('infoMap');
+document.getElementById('map-container').classList.add('infoMapCon');

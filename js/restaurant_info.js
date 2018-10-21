@@ -194,8 +194,11 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-document.getElementsByTagName('nav')[0].children[0].classList.add('restReviews');
 
+const reviewButton = document.createElement('button');
+
+document.getElementsByTagName('nav')[0].children[0].classList.add('restReviews');
+document.getElementsByClassName('restReviews')[0].appendChild(reviewButton);
 var metaTag = document.createElement('meta');
 var viewport = document.createAttribute("name");
 var contentattr = document.createAttribute("content");

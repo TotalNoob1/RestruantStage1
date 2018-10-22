@@ -21,7 +21,9 @@ self.addEventListener('install', function (event) {
   ];
   event.waitUntil(
     caches.open('restaurantData-v1').then(function (cache) {
-      return cache.addAll(urlForRestaurant);
+      for (x= 0; x <= urlForRestaurant.lenght; x++; ){//This way if one fails not all of them fail
+        return cache.add(urlForRestaurant[x]);
+      }
     })
   );
 })

@@ -98,7 +98,7 @@ nav h1 a {
 	border: none;
   background-color: orange;
   color: white;
-  font-size: 110%;
+  font-size: 125%;
 	cursor: pointer;
 }
 .restReviewsButton{
@@ -481,5 +481,6 @@ nav h1 a {
 	}
 	#footer{
 		width: 100%;
+		position: absolute;
 	}
 }

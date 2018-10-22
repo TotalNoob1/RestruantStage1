@@ -89,6 +89,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'Restaurant Image'
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -126,6 +127,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
+  container.tabIndex = '0';
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
@@ -172,6 +174,7 @@ createReviewHTML = (review) => {
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
+  breadcrumb.tabIndex='0'
 
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
@@ -194,20 +197,35 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+function nav() {
+  const reviewButton = document.createElement('button');
+  reviewButton.innerHTML = 'restaurant reviews';
 
-const reviewButton = document.createElement('button');
+  document.getElementsByTagName('nav')[0].children[0].classList.add('restReviews');
 
-document.getElementsByTagName('nav')[0].children[0].classList.add('restReviews');
-document.getElementsByClassName('restReviews')[0].appendChild(reviewButton);
-var metaTag = document.createElement('meta');
-var viewport = document.createAttribute("name");
-var contentattr = document.createAttribute("content");
+  let notButtonNav = document.getElementsByClassName('restReviews')[0].children[0];
+  notButtonNav.tabIndex = '-1'
+  notButtonNav.innerHTML = '';
+  notButtonNav.appendChild(reviewButton);
+  let buttonNav = notButtonNav.children[0];
 
-viewport.value = 'viewport';
-contentattr.value = 'width=device-width, initial-scale=1';
-metaTag.setAttributeNode(viewport);
-metaTag.setAttributeNode(contentattr);
-document.getElementsByTagName('head')[0].appendChild(metaTag);
+  buttonNav.classList.add('restReviewsButton');
 
+}
+function metaTag() {
+  var metaTag = document.createElement('meta');
+  var viewport = document.createAttribute("name");
+  var contentattr = document.createAttribute("content");
+
+  viewport.value = 'viewport';
+  contentattr.value = 'width=device-width, initial-scale=1';
+  metaTag.setAttributeNode(viewport);
+  metaTag.setAttributeNode(contentattr);
+  document.getElementsByTagName('head')[0].appendChild(metaTag);
+
+}
 document.getElementById('map').classList.add('infoMap');
 document.getElementById('map-container').classList.add('infoMapCon');
+nav();
+metaTag();
+document.getElementById('restaurant-container').tabIndex ='0';

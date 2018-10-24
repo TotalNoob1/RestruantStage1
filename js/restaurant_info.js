@@ -212,20 +212,8 @@ function nav() {
   buttonNav.classList.add('restReviewsButton');
 
 }
-function metaTag() {
-  var metaTag = document.createElement('meta');
-  var viewport = document.createAttribute("name");
-  var contentattr = document.createAttribute("content");
 
-  viewport.value = 'viewport';
-  contentattr.value = 'width=device-width, initial-scale=1';
-  metaTag.setAttributeNode(viewport);
-  metaTag.setAttributeNode(contentattr);
-  document.getElementsByTagName('head')[0].appendChild(metaTag);
-
-}
 document.getElementById('map').classList.add('infoMap');
 document.getElementById('map-container').classList.add('infoMapCon');
 nav();
-metaTag();
 document.getElementById('restaurant-container').tabIndex ='0';

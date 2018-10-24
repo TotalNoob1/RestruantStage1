@@ -64,7 +64,7 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px 34px 16px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
@@ -254,11 +254,11 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+  padding: 140px 0px 30px 40px;
 
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 30px 0px 80px 40px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -334,7 +334,7 @@ nav h1 a {
 	}
 
 	#restaurant-container, #reviews-container {
-		width: 100%;
+		width: 91%;
 		position: relative;
 		right: 5%;
 		top :140px;
@@ -342,7 +342,7 @@ nav h1 a {
 		font-size: 125%;
 	}
 	#breadcrumb {
-		width: 100%;
+		width: 84%;
 	}
 
 	#restaurant-name{
@@ -357,7 +357,7 @@ nav h1 a {
 		 font-size: 125%;
 	 }
 	 #footer{
-		 width: 100%;
+		 width: 88%;
 		 top: 100%;
 		 position: relative;
 
@@ -386,7 +386,7 @@ nav h1 a {
 }
 @media screen and (min-width: 600px) and (max-width: 1200px) {
 	#footer{
-		width: 100%;
+		width: 93%;
 	}
 	.neighborhoods{
 		width: 45%;
@@ -445,7 +445,8 @@ nav h1 a {
 @media screen and (min-width: 1200px) {
 	#restaurants-list{
 		position: relative;
-		top: 60px
+		top: 60px;
+		display: -webkit-inline-box;
 	}
 	.infoRest{
 		width: 25%;
@@ -457,12 +458,15 @@ nav h1 a {
 	}
 	.detailsButton{
 		height: 25px;
+		font-size: 150%;
+		top: 10%;
+		position: relative;
 	}
 	.map{
 		height: 600px;
 	}
 	.neighborhoods,.cuisine{
-		width: 30%;
+		width: 40%;
 	}
 	.infoMap{
 		height: 100%;
@@ -480,7 +484,7 @@ nav h1 a {
 
 	}
 	#footer{
-		width: 100%;
+		width: 95%;
 		position: absolute;
 	}
 }
